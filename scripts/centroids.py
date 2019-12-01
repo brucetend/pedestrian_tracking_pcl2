@@ -35,11 +35,17 @@ def callback(data):
                 #make new entry in dictionary for new key
                 dictionary.update({key: np.array([data_point[0], data_point[1]])})
 
+    rospy.loginfo(dictionary)
 
     centroid_dictionary={}
 
+
     for cluster in dictionary:
-        centroid = np.mean(dictionary[cluster], axis=0)
+        if dictionary[cluster].size >> 2:
+            centroid = np.mean(dictionary[cluster], axis=0)
+        else:
+            centroid = dictionary[cluster]
+
         centroid_dictionary.update({cluster: centroid})
 
     rospy.loginfo(centroid_dictionary)
