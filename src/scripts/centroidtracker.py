@@ -1,4 +1,10 @@
-# import the necessary packages
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+"""
+Created on Sat Dec 3 17:38:11 2019
+
+@author: ag345
+"""
 from scipy.spatial import distance as dist
 from collections import OrderedDict
 import numpy as np
