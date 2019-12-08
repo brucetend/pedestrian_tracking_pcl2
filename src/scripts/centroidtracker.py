@@ -10,7 +10,7 @@ from collections import OrderedDict
 import numpy as np
 
 class CentroidTracker():
-	def __init__(self, maxDisappeared=50):
+	def __init__(self, maxDisappeared=20):
 		# initialize the next unique pedestrian ID along with two ordered
 		# dictionaries used to keep track of mapping a given pedestrian
 		# ID to its centroid and number of consecutive frames it has
@@ -29,7 +29,7 @@ class CentroidTracker():
 		# when registering an pedestrian we use the next available pedestrian
 		# ID to store the centroid
 		self.pedestrians[self.nextPedestrianID] = centroid
-		self.pedestriansWithAssociation[self.nextPedestrianID] = np.array(['NaN', 'NaN', centroid[0], centroid[1]])
+		self.pedestriansWithAssociation[self.nextPedestrianID] = np.array([0, 0, centroid[0], centroid[1]])
 		self.disappeared[self.nextPedestrianID] = 0
 		self.nextPedestrianID += 1
 

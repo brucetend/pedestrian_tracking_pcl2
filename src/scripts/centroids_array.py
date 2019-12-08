@@ -12,6 +12,7 @@ from sensor_msgs.msg import PointCloud2
 from sensor_msgs import point_cloud2
 from std_msgs.msg import String
 from pedestrain_tracking.msg import Floatlist
+from pedestrain_tracking.msg import Pedestrian_info
 
 
 def callback(data):
